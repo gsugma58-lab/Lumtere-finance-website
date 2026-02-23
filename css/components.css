@@ -1,0 +1,276 @@
+/* ==========================================================================
+   COMPONENTS - Reusable elements (buttons, cards, forms)
+   ========================================================================== */
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brand-dark);
+    color: #fff;
+    padding: clamp(12px, 3vw, 14px) clamp(24px, 5vw, 32px);
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    box-shadow: var(--shadow-md);
+    white-space: nowrap;
+    position: relative;
+    z-index: 20;
+}
+.btn:hover {
+    background: #1a3f64;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+.btn i { transition: transform 0.3s ease; }
+.btn:hover i { transform: translateX(4px); }
+
+/* Cards */
+.stat-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--brand-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+.stat-label {
+    color: var(--ink-2);
+    font-size: 1rem;
+    font-weight: 500;
+}
+.stat-icon {
+    font-size: 2rem;
+    color: var(--brand);
+    margin-bottom: 1rem;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+.form-group label i {
+    color: var(--brand);
+    margin-right: 0.5rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid rgba(45,126,233,0.1);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(45,126,233,0.1);
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Trust Badges */
+.trust-badges {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+    flex-wrap: wrap;
+}
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 8px 16px;
+    border-radius: var(--radius-pill);
+    color: white;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.trust-badge i { color: var(--brand); }
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.cta-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.cta-btn.primary {
+    background: #c7e039;
+    color: var(--brand-dark);
+}
+.cta-btn.primary:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+.cta-btn.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+.cta-btn.secondary:hover {
+    background: white;
+    color: var(--brand-dark);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+.modal.active { display: flex; }
+.modal-content {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    max-width: 500px;
+    text-align: center;
+    animation: modalSlideIn 0.3s ease;
+}
+.modal-content i {
+    font-size: 5rem;
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+.modal-content h2 {
+    color: var(--brand-dark);
+    margin-bottom: 1rem;
+}
+.modal-btn {
+    background: var(--brand-dark);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.modal-btn:hover { background: var(--brand); }
+
+/* Navbar */
+.navbar {
+    background: rgba(2, 100, 51, 0.95);
+    backdrop-filter: blur(10px);
+    padding-block: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+    width: 100%;
+}
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: min(1440px, 92vw);
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 24px);
+}
+.logo {
+    font-weight: 800;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    color: white;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.logo span { color: #ffd966; font-weight: 400; }
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+    z-index: 101;
+}
+.nav-links {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2rem);
+    flex-wrap: wrap;
+    align-items: center;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: clamp(0.9rem, 2.2vw, 1rem);
+    white-space: nowrap;
+    padding: 0.5rem 0;
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffd966;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.apply-nav-btn {
+    background: #0687dd;
+    color: var(--brand-dark) !important;
+    padding: clamp(8px, 2vw, 10px) clamp(16px, 3vw, 24px);
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+}
+.apply-nav-btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+.apply-nav-btn::after { display: none; }

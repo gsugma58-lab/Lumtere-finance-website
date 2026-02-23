@@ -1,0 +1,102 @@
+/* ==========================================================================
+   RESET & BASE - Core Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f8fafd;
+    --ink: #1a2b3e;
+    --ink-2: #4a5a72;
+    --brand: #2d7ee9;
+    --brand-dark: #0b2b4f;
+    --navy: #0b2b4f;
+    --card: #ffffff;
+    --accent-green: rgba(2, 100, 51, 0.9);
+    --accent-yellow: #ffd966;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --error: #ef4444;
+    --brand-light: #e8f0fe;
+
+    --space-2xs: clamp(4px, 0.5vw, 8px);
+    --space-xs: clamp(6px, 0.8vw, 12px);
+    --space-sm: clamp(10px, 1.2vw, 16px);
+    --space-md: clamp(16px, 2vw, 28px);
+    --space-lg: clamp(24px, 3vw, 48px);
+    --space-xl: clamp(40px, 5vw, 80px);
+
+    --shadow-sm: 0 2px 20px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px -5px rgba(11, 43, 79, 0.15);
+    --shadow-lg: 0 20px 40px -10px rgba(11, 43, 79, 0.25);
+    --shadow-hover: 0 30px 50px -15px rgba(11, 43, 79, 0.3);
+    --radius-pill: 999px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+}
+
+html {
+    font-size: clamp(14px, 1.1vw, 18px);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: #bdbdce;
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: min(1440px, 92vw);
+    margin: 0 auto;
+    padding-inline: clamp(16px, 4vw, 24px);
+}
+
+/* Accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--brand-dark);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 1001;
+}
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes modalSlideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
