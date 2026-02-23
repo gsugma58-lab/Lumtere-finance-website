@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Apply for a Loan - Lumtere Finance Group</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Lumtere Finance<span>Group</span> Ltd</div>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="eligibility.html">Eligibility</a>
+                <a href="offers.html">Loans & Offers</a>
+                <a href="contact.html">Contact</a>
+                <a href="terms.html">T&C</a>
+                <a href="apply.html" class="apply-nav-btn active">Apply now <i class="fas fa-arrow-right"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="apply-hero">
+            <div class="container">
+                <h1>Apply for a Business Loan</h1>
+                <p>Complete the application below. It takes less than 10 minutes.</p>
+                <div class="progress-bar"><div class="progress-fill" style="width:33%"></div></div>
+                <div class="progress-steps">
+                    <span class="active">1. Personal Info</span>
+                    <span>2. Business Details</span>
+                    <span>3. Documents & Submit</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="apply-container">
+            <div class="apply-grid">
+                <div class="application-form">
+                    <!-- UPDATED: Form with FormSubmit.co action and hidden fields -->
+                    <form action="https://formsubmit.co/gparak37@gmail.com" method="POST" id="applicationForm" enctype="multipart/form-data">
+                        
+                        <!-- FormSubmit.co Configuration -->
+                        <input type="hidden" name="_subject" value="New Loan Application - Lumtere Finance">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="hidden" name="_next" value="https://lumtere.com/thank-you.html">
+                        <input type="hidden" name="_autoresponse" value="Thank you for applying to Lumtere Finance. Our team will review your application and contact you within 24 hours.">
+                        
+                        <!-- Form Section 1: Personal Information -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="First Name" placeholder="First Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="Last Name" placeholder="Last Name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" name="Email" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="Phone Number" placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="ID Number" placeholder="ID Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" name="Date of Birth" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Residential Address" placeholder="Residential Address" required>
+                            </div>
+                        </div>
+
+                        <!-- Form Section 2: Business Details -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-briefcase"></i> Business Details</h2>
+                            <div class="form-group">
+                                <input type="text" name="Business Name" placeholder="Business Name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <select name="Business Type" required>
+                                        <option value="">Business Type</option>
+                                        <option value="Sole Trader">Sole Trader</option>
+                                        <option value="Limited Company">Limited Company</option>
+                                        <option value="Partnership">Partnership</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="Years in Business" required>
+                                        <option value="">Years in Business</option>
+                                        <option value="Less than 1 year"><1 year</option>
+                                        <option value="1-2 years">1-2 years</option>
+                                        <option value="2-5 years">2-5 years</option>
+                                        <option value="5+ years">5+ years</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Hidden field to capture loan amount from calculator -->
+                            <input type="hidden" name="Loan Amount" id="hiddenLoanAmount" value="7500">
+                            
+                            <div class="loan-selection">
+                                <h3>Select Loan Amount</h3>
+                                <div class="loan-amount-slider">
+                                    <div class="slider-value"><span>Loan Amount:</span><span id="loanAmount">K7,500</span></div>
+                                    <input type="range" id="loanSlider" min="1000" max="25000" value="7500" step="500">
+                                </div>
+                                <div class="loan-terms">
+                                    <div class="term-option selected" data-term="6">
+                                        <div class="months">6 Months</div>
+                                        <div class="small">Short term</div>
+                                    </div>
+                                    <div class="term-option" data-term="12">
+                                        <div class="months">12 Months</div>
+                                        <div class="small">Popular</div>
+                                    </div>
+                                    <div class="term-option" data-term="24">
+                                        <div class="months">24 Months</div>
+                                        <div class="small">Long term</div>
+                                    </div>
+                                </div>
+                                <!-- Hidden field for loan term -->
+                                <input type="hidden" name="Loan Term" id="hiddenLoanTerm" value="6">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="Loan Purpose" rows="3" placeholder="Loan Purpose" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Form Section 3: Documents & Submit -->
+                        <div class="form-section">
+                            <h2><i class="fas fa-file-upload"></i> Upload Documents</h2>
+                            <div class="file-upload" id="fileUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop files here or <span class="browse">browse</span></p>
+                                <input type="file" id="fileInput" name="documents[]" multiple style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
+                            </div>
+                            <div class="file-list" id="fileList"></div>
+                            
+                            <!-- Additional hidden fields for file tracking -->
+                            <input type="hidden" name="_attachments" value="1">
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="Terms Accepted" value="Yes" required>
+                                <label for="terms">I agree to the <a href="terms.html">Terms & Conditions</a></label>
+                            </div>
+                            
+                            <!-- Hidden field to capture application timestamp -->
+                            <input type="hidden" name="Application Date" id="applicationDate">
+                            
+                            <button type="submit" class="submit-btn">Submit Application <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="apply-sidebar">
+                    <div class="summary-card">
+                        <h3><i class="fas fa-calculator"></i> Loan Summary</h3>
+                        <div class="summary-item"><span>Loan Amount</span><span id="summaryAmount">K7,500</span></div>
+                        <div class="summary-item"><span>Interest Rate</span><span id="summaryRate">22%</span></div>
+                        <div class="summary-item"><span>Term</span><span id="summaryTerm">6 months</span></div>
+                        <div class="summary-total" id="summaryTotal">K9,150</div>
+                    </div>
+                    <div class="help-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>Need Help?</h4>
+                        <p>Call us: <strong>+675 7946 0138</strong></p>
+                        <p class="hours">Mon-Fri, 9am - 5pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Application Submitted!</h2>
+                <p>Thank you for applying. Our team will contact you within 24 hours.</p>
+                <button class="modal-btn" onclick="closeModal()">Done</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="eligibility.html">Eligibility</a>
+                <a href="offers.html">Loans & Offers</a>
+                <a href="terms.html">Terms</a>
+                <a href="apply.html">Apply</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 Lumtere Finance Ltd – Founded 25th December 2025
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    
+    <script>
+        // Set application date automatically
+        document.getElementById('applicationDate').value = new Date().toLocaleString();
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Eligibility Checker - Lumtere Finance Group</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Lumtere Finance<span>Group</span> Ltd</div>
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="eligibility.html" class="active">Eligibility</a>
+                <a href="offers.html">Loans & Offers</a>
+                <a href="contact.html">Contact</a>
+                <a href="terms.html">T&C</a>
+                <a href="apply.html" class="apply-nav-btn">Apply now <i class="fas fa-arrow-right"></i></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="eligibility-hero">
+            <div class="container">
+                <h1>Check Your Eligibility</h1>
+                <p>Find out if you qualify in under 60 seconds - no credit check required</p>
+            </div>
+        </section>
+
+        <section class="eligibility-section">
+            <div class="container">
+                <div class="quick-check-banner" data-aos="fade-up">
+                    <div class="quick-check-content">
+                        <div class="quick-check-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="quick-check-text">
+                            <h3>Quick Eligibility Check</h3>
+                            <p>90% of applicants qualify • Soft check only • No impact on credit score</p>
+                        </div>
+                    </div>
+                    <div class="quick-check-badge"><i class="fas fa-clock"></i> Takes less than 2 minutes</div>
+                </div>
+
+                <div class="eligibility-checker-tool" data-aos="fade-up">
+                    <div class="checker-title">
+                        <h2><i class="fas fa-clipboard-check"></i> Eligibility Checker</h2>
+                        <p>Answer a few quick questions to see if you pre-qualify</p>
+                    </div>
+
+                    <div class="checker-form" id="eligibilityForm">
+                        <div class="step-indicator">
+                            <span class="step-dot active"></span>
+                            <span class="step-dot"></span>
+                            <span class="step-dot"></span>
+                        </div>
+
+                        <div class="form-step active" id="step1">
+                            <div class="form-group">
+                                <label><i class="fas fa-building"></i> What is your business/employment type?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="businessType" value="employed" checked><span>Employed</span></label>
+                                    <label class="radio-option"><input type="radio" name="businessType" value="self-employed"><span>Self-employed</span></label>
+                                    <label class="radio-option"><input type="radio" name="businessType" value="company"><span>Registered Company</span></label>
+                                </div>
+                            </div>
+                            <div class="step-buttons"><div></div><button class="step-btn next" onclick="nextStep(2)">Next Step <i class="fas fa-arrow-right"></i></button></div>
+                        </div>
+
+                        <div class="form-step" id="step2">
+                            <div class="form-group">
+                                <label><i class="fas fa-clock"></i> How long have you been in business?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option"><input type="radio" name="timeInBusiness" value="<6" checked><span>Less than 6 months</span></label>
+                                    <label class="radio-option"><input type="radio" name="timeInBusiness" value="6-12"><span>6-12 months</span></label>
+                                    <label class="radio-option"><input type="radio" name="timeInBusiness" value="1-2"><span>1-2 years</span></label>
+                                    <label class="radio-option"><input type="radio" name="timeInBusiness" value="2+"><span>2+ years</span></label>
+                                </div>
+                            </div>
+                            <div class="step-buttons">
+                                <button class="step-btn prev" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Previous</button>
+                                <button class="step-btn next" onclick="nextStep(3)">Next Step <i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step3">
+                            <div class="form-group">
+                                <label><i class="fas fa-hand-holding-usd"></i> What loan amount are you interested in?</label>
+                                <select id="loanAmount">
+                                    <option value="1000">K1,000 - K2,500</option>
+                                    <option value="2500">K2,500 - K5,000</option>
+                                    <option value="5000">K5,000 - K7,500</option>
+                                    <option value="7500">K7,500 - K10,000</option>
+                                    <option value="10000">K10,000 - K15,000</option>
+                                    <option value="15000">K15,000 - K20,000</option>
+                                    <option value="20000">K20,000 - K25,000</option>
+                                </select>
+                            </div>
+                            <div class="step-buttons">
+                                <button class="step-btn prev" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Previous</button>
+                                <button class="step-btn next" onclick="checkEligibility()">Check Eligibility <i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-panel" id="resultsPanel">
+                        <div class="result-header">
+                            <div class="result-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="result-title"><h3>You're Likely Eligible!</h3><p>Based on your responses, you meet our initial criteria</p></div>
+                        </div>
+                        <div class="result-grid">
+                            <div class="result-item"><div class="label">Estimated Loan Amount</div><div class="value" id="resultAmount">K1,000 - K7,500</div></div>
+                            <div class="result-item"><div class="label">Interest Rate Range</div><div class="value" id="resultRate">22% - 30%</div></div>
+                            <div class="result-item"><div class="label">Approval Time</div><div class="value">24-48 hours</div></div>
+                        </div>
+                        <div class="result-actions">
+                            <a href="apply.html" class="result-btn primary">Continue to Application <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Ready to Start Your Application?</h2>
+                    <p>Join thousands of businesses that have secured funding with Lumtere</p>
+                    <div class="cta-buttons">
+                        <a href="apply.html" class="cta-btn primary">Apply Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="contact.html" class="cta-btn secondary">Talk to an Advisor</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="eligibility.html">Eligibility</a>
+                <a href="offers.html">Loans & Offers</a>
+                <a href="terms.html">Terms</a>
+                <a href="apply.html">Apply</a>
+            </div>
+            <div class="footer-copy">
+                © 2026 Lumtere Finance Ltd – Founded 25th December 2025
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true, offset: 100 });</script>
+</body>
+</html>
